@@ -1,7 +1,7 @@
 import ProductRepositoryInterface from "../../../domain/product/repository/product-repository.interface";
 import { UpdateProductInputDto, UpdateProductOutputDto } from "./update.product.dto";
 
-export default class ProductCreateUseCase {
+export default class ProductUpdateUseCase {
   private productRepository: ProductRepositoryInterface;
 
   constructor(productRepository: ProductRepositoryInterface) {
