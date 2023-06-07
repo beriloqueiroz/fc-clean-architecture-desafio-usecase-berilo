@@ -1,5 +1,4 @@
 export interface CreateProductInputDto {
-  type: string,
   name: string,
   price: number,
 }

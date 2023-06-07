@@ -6,7 +6,6 @@ import ProductRepository from "../../../infrastructure/product/repository/sequel
 const input = {
   name: "Product 1",
   price: 15,
-  type: "a"
 }
 
 describe("Integration test create product use case", () => {
@@ -66,16 +65,4 @@ describe("Integration test create product use case", () => {
     );
   });
 
-  it("should thrown an error when invalid type", async () => {
-    const productRepository = new ProductRepository();
-    const productCreateUseCase = new ProductCreateUseCase(productRepository);
-
-    input.name = "Product 1";
-    input.price = 15;
-    input.type = "";
-
-    await expect(productCreateUseCase.execute(input)).rejects.toThrow(
-      "Product type not supported"
-    );
-  });
 })

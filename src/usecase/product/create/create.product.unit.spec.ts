@@ -3,7 +3,6 @@ import ProductCreateUseCase from "./create.product.usecase";
 const input = {
   name: "Product 1",
   price: 15,
-  type: "a"
 }
 
 const MockRepository = () => {
@@ -50,19 +49,6 @@ describe("Unit test create product use case", () => {
 
     await expect(productCreateUseCase.execute(input)).rejects.toThrow(
       "Price must be greater than zero"
-    );
-  });
-
-  it("should thrown an error when invalid type", async () => {
-    const productRepository = MockRepository();
-    const productCreateUseCase = new ProductCreateUseCase(productRepository);
-
-    input.name = "Product 1";
-    input.price = 15;
-    input.type = "";
-
-    await expect(productCreateUseCase.execute(input)).rejects.toThrow(
-      "Product type not supported"
     );
   });
 })
